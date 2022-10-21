@@ -1,0 +1,65 @@
+.tool-container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  padding: 2rem;
+  min-height: 70px;
+}
+
+.details-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  transform: translateX(101%);
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  color: var(--mainWhite);
+}
+
+.tool-container:hover .details-btn {
+  transform: translateX(0);
+}
+
+.tool-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-container:hover {
+  opacity: 0.8;
+}
+
+.tool-container h4 {
+  margin-top: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  font-weight: 200;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.tool-btn {
+  margin-top: 10px;
+  padding: 9px 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.link-btn {
+  margin-top: 15px;
+}

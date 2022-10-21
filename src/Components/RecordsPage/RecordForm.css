@@ -1,0 +1,36 @@
+.new-record {
+  height: 100vh;
+  background: url("../../assets/laptop.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.record {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+  display: inline-block;
+  padding: 2rem;
+  text-transform: capitalize;
+  color: white;
+  letter-spacing: 0.5rem;
+  height: 80%;
+  width: 40%;
+}
+
+.submit-btn {
+  margin-top: 20px;
+}
+
+.input-label {
+  padding-top: 1rem;
+}
+
+.record > form > input {
+  width: 50%;
+  height: 30px;
+}
+
+#details {
+  height: 50px
+}

@@ -1,0 +1,63 @@
+/* hero section */
+.hero {
+    /* min-height: calc(100vh - 60px); */
+    height: 100vh;
+    background: url("../../assets/tool.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    padding: 2rem;
+}
+
+.numbers {
+    padding: 0 1rem;
+    letter-spacing: var(--mainSpacing);
+    font-size: 1rem;
+    background: var(--primaryColor);
+    color: var(--mainBlack);
+    border: 1px solid var(--primaryColor);
+    transition: var(--mainTransition);
+    cursor: pointer;
+}
+
+.numbers:hover {
+    background: transparent;
+    color: var(--primaryColor);
+}
+
+
+/* tools section */
+.tools {
+    padding: 4rem 0;
+    background: rgb(219, 122, 37);
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+}
+
+.tools-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
