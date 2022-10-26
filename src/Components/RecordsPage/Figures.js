@@ -1,44 +1,109 @@
 import { Link } from "react-router-dom";
 import "./Figures.css";
 import SingleTool from "./SingleTool";
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const options = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        align: 'left',
+        text: 'Toolhub Records Data'
+    },
+    
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Number of tools'
+        }
+
+    },
+    
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:.1f}%'
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
+
+    series: [
+        {
+            name: "Records",
+            colorByPoint: true,
+            data: [
+                {
+                    name: "Total number of tools in records",
+                    y: 50
+                },
+                {
+                    name: "Tools with missing information",
+                    y: 10
+                    
+                },
+                {
+                    name: "Tools edited with records management tool",
+                    y: 30
+                    
+                }
+            ]
+        }
+    ],
+    
+            
+}
+
+const settings = {
+    infinite: true,
+    dots: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    lazyLoad: true,
+    autoplay: false,
+  autoplaySpeed: 2000,
+   
+  };
 
 const Figures = ({ toolsInfo, toDelete, toEdit }) => {
+  
   return (
     <div className="records-container">
       <header className="hero">
-        <div className="banner">
-          <h1>
-            Total Number of tools: <span className="numbers">15</span>
-          </h1>
-          <h1>
-            Tools with missing information: <span className="numbers">2</span>
-          </h1>
-          <h1>
-            Percentage of tools with missing information:{" "}
-            <span className="numbers">15%</span>
-          </h1>
-          <h1>
-            Tools edited with records management tool:{" "}
-            <span className="numbers">10</span>
-          </h1>
-        </div>
+        <HighchartsReact highcharts={Highcharts} options={options} />
       </header>
       <div className="tools">
         <div className="section-title">
           <h2>Tools Recorded</h2>
         </div>
         <div className="tools-center">
-          {toolsInfo.map((item) => {
+          <Slider {...settings}>
+            {toolsInfo.map((tool) => {
             return (
               <SingleTool
-                key={item.id}
-                tool={item}
+                key={tool.id}
+                tool={tool}
                 toolsInfo={toolsInfo}
                 deleteFunction={toDelete}
                 editFuntion={toEdit}
               />
             );
           })}
+          </Slider>
+          
         </div>
         <div className="button">
           <Link to={`/records/new-record`}>

@@ -14,7 +14,7 @@
   text-transform: capitalize;
   color: white;
   letter-spacing: 0.5rem;
-  height: 80%;
+  height: 90%;
   width: 40%;
 }
 
@@ -29,8 +29,4 @@
 .record > form > input {
   width: 50%;
   height: 30px;
-}
-
-#details {
-  height: 50px
 }

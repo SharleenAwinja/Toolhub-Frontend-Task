@@ -20,7 +20,7 @@ return (
         {sortInfo(toolsInfo).map((tool) => (
           <div className="board-container">
             <div className="name">
-              <h2>{tool.author} </h2>
+              <h2>{tool.created_by.username} </h2>
             </div>
             <div className="edits">
               <h2>{tool.edits} </h2>

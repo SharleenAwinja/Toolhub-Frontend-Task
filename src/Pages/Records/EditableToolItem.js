@@ -9,16 +9,17 @@ function EditableToolItem(props) {
   const { tool } = location.state;
 
   //intializing input values with details of the current record
-  const [toolName, setToolName] = useState(tool.toolname);
+  const [name, setName] = useState(tool.name);
   const [description, setDescription] = useState(tool.description);
   const [url, setUrl] = useState(tool.url);
   const [repository, setRepository] = useState(tool.repository);
-  const [details, setDetails] = useState(tool.details);
-  const [author, setAuthor] = useState(tool.author);
+  const [toolType, setToolType] = useState(tool.tool_type);
+  const [bugTracker, setBugTracker] = useState(tool.bugtracker_url);
+  const [author, setAuthor] = useState(tool.author[0].name);
 
   //setting state for the various input elements
   const toolNameHandler = (event) => {
-    setToolName(event.target.value);
+    setName(event.target.value);
   };
 
   const descriptionHandler = (event) => {
@@ -32,8 +33,12 @@ function EditableToolItem(props) {
   const repositoryHandler = (event) => {
     setRepository(event.target.value);
   };
-  const detailsHandler = (event) => {
-    setDetails(event.target.value);
+  const toolTypeHandler= (event) => {
+    setToolType(event.target.value);
+  };
+
+  const bugTrackerHandler= (event) => {
+    setBugTracker(event.target.value);
   };
 
   const authorHandler = (event) => {
@@ -48,24 +53,30 @@ function EditableToolItem(props) {
     //setting values for the record being edited
     const toolData = {
       id: tool.id,
-      toolname: toolName,
+      name: name,
       description: description,
       url: url,
       repository: repository,
-      details: details,
-      author: author,
-      slug: toolName,
+      tool_type: toolType,
+      bugtracker_url: bugTracker,
+      author: [
+        {
+        name: author,
+      },
+      ],
+      title: name,
     };
 
     //function to save the recors
     props.onSaveToolData(toolData);
 
     //setting the input values to empty strings
-    setToolName("");
+    setName("");
     setDescription("");
     setUrl("");
     setRepository("");
-    setDetails("");
+    setToolType("");
+    setBugTracker("");
     setAuthor("");
 
     alert('Record has been edited');
@@ -80,11 +91,11 @@ function EditableToolItem(props) {
             type="text"
             placeholder="enter tool name"
             id="title"
-            value={toolName}
+            value={name}
             onChange={toolNameHandler}
             required
           />
-          <div className="input-label">Brief Description: </div>
+          <div className="input-label">Description: </div>
           <input
             type="text"
             placeholder="enter tool description"
@@ -111,13 +122,21 @@ function EditableToolItem(props) {
             onChange={repositoryHandler}
             required
           />
-          <div className="input-label">Details: </div>
+          <div className="input-label">Tool type: </div>
           <input
             type="text"
-            placeholder="enter detailed explanation of the tool"
-            id="details"
-            value={details}
-            onChange={detailsHandler}
+            placeholder="enter tool type"
+            id="tooltype"
+            value={toolType}
+            onChange={toolTypeHandler}
+          />
+          <div className="input-label">Bugtracker URL: </div>
+          <input
+            type="text"
+            placeholder="enter bugtracker url"
+            id="bugtracker"
+            value={bugTracker}
+            onChange={bugTrackerHandler}
           />
           <div className="input-label">Author: </div>
           <input

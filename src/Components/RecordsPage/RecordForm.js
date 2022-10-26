@@ -4,16 +4,17 @@ import "./RecordForm.css";
 
 function RecordForm(props) {
   //setting up state for the various input elements
-  const [toolName, setToolName] = useState("");
-  const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
-  const [repository, setRepository] = useState("");
-  const [details, setDetails] = useState("");
-  const [author, setAuthor] = useState("");
+   const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [url, setUrl] = useState('');
+  const [repository, setRepository] = useState('');
+  const [toolType, setToolType] = useState('');
+  const [bugTracker, setBugTracker] = useState('');
+  const [author, setAuthor] = useState('');
 
   //event handlers for each input element
   const toolNameHandler = (event) => {
-    setToolName(event.target.value);
+    setName(event.target.value);
   };
 
   const descriptionHandler = (event) => {
@@ -27,8 +28,12 @@ function RecordForm(props) {
   const repositoryHandler = (event) => {
     setRepository(event.target.value);
   };
-  const detailsHandler = (event) => {
-    setDetails(event.target.value);
+  const toolTypeHandler = (event) => {
+    setToolType(event.target.value);
+  };
+
+  const bugTrackerHandler = (event) => {
+    setBugTracker(event.target.value);
   };
 
   const authorHandler = (event) => {
@@ -40,24 +45,31 @@ function RecordForm(props) {
 
     //consolidating all the input
     const toolData = {
-      toolname: toolName,
+      name: name,
       description: description,
       url: url,
       repository: repository,
-      details: details,
-      author: author,
-      slug: toolName,
+      tool_type: toolType,
+      bugtracker_url: bugTracker,
+      author: [
+        {
+        name: author,
+      },
+      ],
+      title: name,
     };
+
 
     //function to add the record
     props.onSaveToolData(toolData);
 
     //reseting input values to empty strings
-    setToolName("");
+    setName("");
     setDescription("");
     setUrl("");
     setRepository("");
-    setDetails("");
+    setToolType("");
+    setBugTracker("");
     setAuthor("");
 
     alert('Record has been saved');
@@ -72,11 +84,11 @@ return (
             type="text"
             placeholder="enter tool name"
             id="title"
-            value={toolName}
+            value={name}
             onChange={toolNameHandler}
             required
           />
-          <div className="input-label">Brief Description: </div>
+          <div className="input-label">Description: </div>
           <input
             type="text"
             placeholder="enter tool description"
@@ -103,13 +115,21 @@ return (
             onChange={repositoryHandler}
             required
           />
-          <div className="input-label">Details: </div>
+          <div className="input-label">Tool Type: </div>
           <input
             type="text"
             placeholder="enter detailed explanation of the tool"
-            id="details"
-            value={details}
-            onChange={detailsHandler}
+            id="tooltype"
+            value={toolType}
+            onChange={toolTypeHandler}
+          />
+          <div className="input-label">Bugtracker URL: </div>
+          <input
+            type="text"
+            placeholder="enter detailed explanation of the tool"
+            id="bugtracker"
+            value={bugTracker}
+            onChange={bugTrackerHandler}
           />
           <div className="input-label">Author: </div>
           <input

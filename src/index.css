@@ -20,7 +20,7 @@ h2,
 h4,
 p,
 a {
-  color: #fff;
+  color: #000;
 }
 
 body {
@@ -30,7 +30,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: #000;
+  background: #fff;
+  color: #000;
 }
 
 ul {
@@ -50,27 +51,27 @@ code {
   padding: 12px 32px;
   font-size: 1.2rem;
   text-transform: uppercase;
-  background: transparent;
+  background: #339966;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid black;
   cursor: pointer;
 }
 
-.btn-light {
+/* .btn-light {
   background: rgba(255, 255, 255, 0.2);
-}
+} */
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+/* .btn:hover {
+  background: rgba(0, 0, 0, .8);
+} */
 
-.slide {
+/* .slide {
   opacity: 0;
   transition-duration: 1s ease;
-}
+} */
 
-.slide.active {
+/* .slide.active {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
-}
+} */

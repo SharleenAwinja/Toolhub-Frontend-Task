@@ -1,24 +1,10 @@
-.tool-hero {
-  min-height: 60vh;
-  background: url("../assets/laptop.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.item-banner {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.9);
-  display: inline-block;
-  padding: 2rem;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 3rem;
-}
-
 .tool {
   padding: 4rem 0;
-  background: rgb(219, 122, 37);
+  background: rgb(189, 195, 199);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-container {
@@ -27,6 +13,7 @@
   display: inline-block;
   padding: 2rem;
   min-height: 260px;
+  
 }
 
 .item-container h4 {
@@ -43,16 +30,18 @@
 .buttons {
   margin: 20px auto;
   display: flex;
-  justify-content: center;
-  width: 60vw;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20vw;
+  height: 100px;
 }
 
-.btn {
+/* .btn {
   padding: 12px 32px;
   font-size: 1.2rem;
   text-transform: uppercase;
-  background: transparent;
-  color: #fff;
+  /* background: #fff; */
+  /* color: #fff;
   border: 1px solid #fff;
   cursor: pointer;
-}
+} */ 
