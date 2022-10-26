@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit:wght@100;300;400;500;600;700;800&display=swap");
 
-:root {
-  --primaryColor: #f09d51;
-  --mainWhite: #fff;
-  --mainBlack: #222;
-  --mainGrey: #ececec;
-  --mainSpacing: 0.1rem;
-  --mainTransition: all 0.3s linear;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,8 +20,6 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background: #fff;
   color: #000;
 }
 
@@ -40,11 +29,6 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .btn {
@@ -57,21 +41,15 @@ code {
   cursor: pointer;
 }
 
-/* .btn-light {
-  background: rgba(255, 255, 255, 0.2);
-} */
+.btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
 
-/* .btn:hover {
-  background: rgba(0, 0, 0, .8);
-} */
-
-/* .slide {
-  opacity: 0;
-  transition-duration: 1s ease;
-} */
-
-/* .slide.active {
-  opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
-} */
+.buttons {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20vw;
+  height: 100px;
+}

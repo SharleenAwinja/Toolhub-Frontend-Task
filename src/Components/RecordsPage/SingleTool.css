@@ -3,34 +3,3 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
-
-
-
-
-/* .tool-btn {
-  margin-top: 10px;
-  padding: 9px 20px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  cursor: pointer;
-} */
-
-/* .link-btn {
-  margin-top: 15px;
-} */
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 300px;
-}
-
-.btn-div {
-  margin-top: 2rem;
-  /* width: 100px; */
-}

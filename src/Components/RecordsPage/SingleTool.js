@@ -12,11 +12,9 @@ const SingleTool = ({ tool, deleteFunction }) => {
     <article className="single-tool">
       <Post tool={tool} />
       <div className="buttons">
-        <div className="btn-div">
           <button className="btn" type="button" onClick={deletingHandler}>
             Delete Record
           </button>
-        </div>
       </div>
     </article>
   );

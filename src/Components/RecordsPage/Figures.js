@@ -12,7 +12,7 @@ const options = {
         type: 'column'
     },
     title: {
-        align: 'left',
+        align: 'center',
         text: 'Toolhub Records Data'
     },
     
@@ -31,14 +31,14 @@ const options = {
             borderWidth: 0,
             dataLabels: {
                 enabled: true,
-                format: '{point.y:.1f}%'
+                format: '{point.y}'
             }
         }
     },
 
     tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
     },
 
     series: [
@@ -48,16 +48,16 @@ const options = {
             data: [
                 {
                     name: "Total number of tools in records",
-                    y: 50
+                    y: 73
                 },
                 {
                     name: "Tools with missing information",
-                    y: 10
+                    y: 22
                     
                 },
                 {
                     name: "Tools edited with records management tool",
-                    y: 30
+                    y: 57
                     
                 }
             ]

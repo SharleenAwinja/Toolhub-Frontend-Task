@@ -10,15 +10,14 @@ import ToolItem from "./Pages/ToolItem";
 import NewRecord from "./Pages/Records/NewRecord";
 import { useState, useEffect } from "react";
 import Editable from "./Pages/Records/Editable";
-import {GetRecords} from './Resources/ToolsResource';
+import { GetRecords } from "./Resources/ToolsResource";
 import { dataInfo } from "./Data/dataInfo";
-
 
 function App() {
   //intializing state for dataInfo
   const [toolsInfo, setToolsInfo] = useState(dataInfo);
 
-  //setting up locat storage
+  //setting up local storage
   useEffect(() => {
     const temp = localStorage.getItem("toolsinfo");
     const loadedtools = JSON.parse(temp);
@@ -29,13 +28,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    GetRecords().then((dataInfo) => {
-      const toolJson = JSON.stringify(toolsInfo);
-    localStorage.setItem("toolsinfo", toolJson);
-    }).catch((error) => {
-      console.log(error);
-    })
-    
+    GetRecords()
+      .then((dataInfo) => {
+        const toolJson = JSON.stringify(dataInfo);
+        localStorage.setItem("toolsinfo", toolJson);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [toolsInfo]);
 
   //creating, add, delete and edit functions for the records
