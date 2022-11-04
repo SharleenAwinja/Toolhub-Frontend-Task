@@ -1,5 +1,6 @@
 import React from "react";
 import "./Board.css";
+import Hero from '../../Pages/Records/Hero';
 
 const Board = ({ toolsInfo }) => {
 
@@ -13,20 +14,27 @@ function sortInfo(infoArray) {
 
 return (
     <>
-      <div className="board-hero">
-        <div className="item-banner">LeaderBoard</div>
-      </div>
+      <Hero title='leaderboard' />
       <div className="board">
-        {sortInfo(toolsInfo).map((tool) => (
-          <div className="board-container">
-            <div className="name">
-              <h2>{tool.author} </h2>
-            </div>
-            <div className="edits">
-              <h2>{tool.edits} </h2>
-            </div>
-          </div>
+       <table>
+        <thead>
+          <th><h3>User</h3></th>
+          <th><h3>Number of edits</h3></th>
+        </thead>
+        <tbody>
+          {sortInfo(toolsInfo).map((tool) => (
+          <tr>
+            <td>
+              <h3>{tool.created_by.username} </h3>
+            </td>
+            <td>
+              <h3>{tool.edits} </h3>
+            </td>
+          </tr>
         ))}
+        </tbody>
+       </table>
+        
       </div>
     </>
   );

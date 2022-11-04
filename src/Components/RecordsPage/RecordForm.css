@@ -1,6 +1,6 @@
 .new-record {
-  height: 100vh;
-  background: url("../../assets/laptop.jpg") center/cover no-repeat;
+  height: 100%;
+  background: rgb(236, 236, 236);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +14,9 @@
   text-transform: capitalize;
   color: white;
   letter-spacing: 0.5rem;
-  height: 80%;
+  height: 70%;
   width: 40%;
+  margin-top: 6rem;
 }
 
 .submit-btn {
@@ -29,8 +30,4 @@
 .record > form > input {
   width: 50%;
   height: 30px;
-}
-
-#details {
-  height: 50px
 }

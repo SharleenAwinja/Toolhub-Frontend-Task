@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Background.css";
-import background from "../../assets/backimage.jpg";
 import ListPage from "../../Pages/Home/ListPage";
 
 function Background({ toolsInfo }) {
@@ -17,10 +16,9 @@ const searchInputHandler = (e) => {
   };
 
 return (
-    <div className="hero">
-      <img src={background} alt="backphoto" id="back-image" />
+    <div className="home-container">
       <div className="content">
-        <h1>Toolhub Records</h1>
+        <h1><span className="toolhub-blue">Toolhub</span> <span className="toolhub-red">Records</span></h1>
         <p>
           This application makes it possible to edit toolhub records by way of a
           dedicated UI hence making editing faster and more enjoyable
@@ -31,12 +29,15 @@ return (
             type="text"
             placeholder="Search for a tool"
             onChange={searchInputHandler}
+            value={searchTerm}
           />
           <button className="btn" type="submit">
             Search
           </button>
         </form>
-        <ListPage toolsInfo={toolsInfo} searchTerm={searchTerm} />
+        <div className="tools-center">
+          <ListPage toolsInfo={toolsInfo} searchTerm={searchTerm}/>
+        </div>
       </div>
     </div>
   );

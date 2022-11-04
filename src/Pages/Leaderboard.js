@@ -4,7 +4,7 @@ import Board from '../Components/Leaderboard/Board';
 function Leaderboard({toolsInfo}) {
   return (
     <div>
-      <Board toolsInfo={toolsInfo} />
+      <Board toolsInfo={toolsInfo}/>
     </div>
   )
 }

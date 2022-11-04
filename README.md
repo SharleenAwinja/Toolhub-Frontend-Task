@@ -9,4 +9,3 @@ Toolhub is a community catalog of tools used across many Wiki projects. Its usef
 ### Application details
 
 This project creates an application by which toolhub records can be edited using a dedicated UI. The UI has functionality to add new records, edit or delete existing records, view details of a specific record and a search feature to search through the records. It also has a 30 day leaderboard that ranks users according to the number of tools they have added or edited in a month. 
-

@@ -1,25 +1,7 @@
-.board-hero {
-  min-height: 60vh;
-  background: url("../../assets/laptop.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-}
-
-.item-banner {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.9);
-  display: inline-block;
-  padding: 2rem;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 3rem;
-}
 
 .board {
   padding: 4rem 0;
-  background: rgb(219, 122, 37);
+  background: rgb(189, 195, 199);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -35,3 +17,25 @@
   height: 20px;
   width: 50%;
 }
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  background-color: #dddddd;
+}
+
+td,
+th {
+  
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+thead {
+  border-bottom: 1px solid grey;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */

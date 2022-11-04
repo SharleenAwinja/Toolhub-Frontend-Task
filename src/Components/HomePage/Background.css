@@ -1,64 +1,69 @@
-.hero {
-    height: 100vh;
-    width: 100%;
-}
-
-#back-image {
-    position: fixed;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.home-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
 }
 
 .content {
-    z-index: 2;
+  z-index: 2;
 }
 
-.hero .content {
-    text-align: center;
-    position: absolute;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    top: 40vh;
+.home-container .content {
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  top: 40vh;
 }
 
-.hero .content h1 {
-    font-size: 4rem;
-    color: #fff;
+.home-container .content h1 {
+  font-size: 4rem;
+  color: black;
 }
 
-.hero p {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1.6rem;
-    color: #fff;
+.home-container p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+  color: black;
+  padding: 0 70px;
 }
 
 .search-area {
-    display: flex;
-    width: 500px;
-    margin: auto;
-    justify-content: space-between;
-
+  display: flex;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 2rem;
+  justify-content: space-between;
 }
 
 .search-area input {
-    width: 300px;
-    background-color: transparent;
-    color: white;
-    font-weight: 200;
-    border: solid 1px white;
+  width: 300px;
+  background-color: transparent;
+  color: black;
+  font-weight: 200;
+  border: solid 1px black;
 }
 
 @media screen and (max-width: 640px) {
-    .content h1 {
-        font-size: 3rem;
-    }
+  .content h1 {
+    font-size: 3rem;
+  }
 
-    .content p {
-        font-size: 1.4rem;
-        margin-bottom: 1.6rem;
-    }
+  .content p {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.toolhub-blue {
+  color: #006699;
+}
+
+.toolhub-red {
+  color: #990000;
 }
